@@ -1,0 +1,6 @@
+.ft-hidden {
+    display:none;
+}
+.ft-tab a{
+    cursor: pointer;
+}
