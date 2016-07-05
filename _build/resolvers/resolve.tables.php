@@ -22,6 +22,7 @@ if ($object->xpdo) {
                 }
                 unset($schema);
             }
+
             foreach ($objects as $tmp) {
                 $table = $modx->getTableName($tmp);
                 $sql = "SHOW TABLES LIKE '".trim($table,'`')."'";

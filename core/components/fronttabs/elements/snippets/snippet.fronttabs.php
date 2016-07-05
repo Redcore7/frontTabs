@@ -7,7 +7,10 @@ if (!$frontTabs = $modx->getService('fronttabs', 'frontTabs', $modx->getOption('
 
 $frontTabs->initialize($modx->context->key, $scriptProperties);
 
-$resource = $modx->getOption('resource', $scriptProperties, $modx->resource->id);
+$resource = $modx->getOption('resource', $scriptProperties, '');
+if (!$resource) {
+	$resource = $modx->resource->get('id');
+}
 
 if (!$tabsCategory = $modx->getObject('modCategory', array('category' => $category))) {
 	$modx->log(MODX::LOG_LEVEL_ERROR, 'Не найдена категория ' . $category);
